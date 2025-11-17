@@ -1,0 +1,38 @@
+
+#===========================================#
+#   Morciz-Router Development Session 🌿     #
+#===========================================#
+
+########################################
+# TAB 1: Desarrollo principal
+########################################
+new_tab "Dev"
+layout tall
+
+# Ventana 1 – Editor principal
+launch --title "Morciz Root" --cwd ~/code/ nvim
+
+# Ventana 2 – Servidor (Ktor)
+launch --title "Server" --cwd ~/code/morciz-router-server/server/ bash -lc "gradle run"
+
+# Ventana 3 – Cliente (Next.js)
+launch --title "Client" --cwd ~/code/morciz-router/ bash -lc "npm run dev"
+
+
+########################################
+# TAB 2: Dev - Client
+########################################
+new_tab "Dev - Client"
+layout grid
+
+launch --title "Ambrosia Client" --cwd ~/code/morciz-router/ nvim .
+
+
+########################################
+# TAB 3: Dev - Server
+########################################
+new_tab "Dev - Server"
+layout grid
+
+launch --title "Ambrosia Server" --cwd ~/code/morciz-router-server/server/ nvim .
+

@@ -1,0 +1,26 @@
+
+#===========================================#
+#   Ambrosia-POS Development Session 🌿     #
+#===========================================#
+
+# Usa el layout “tall”: ventana principal + dos secundarias verticales
+layout tall
+
+# Directorio base del proyecto
+cd ~/code/Ambrosia-POS
+
+########################################
+# Ventana 1 – Editor principal
+########################################
+launch --title "Ambrosia Root" nvim
+
+########################################
+# Ventana 2 – Servidor Ktor (backend)
+########################################
+launch --title "Server" bash -lc "cd server && gradle run"
+
+########################################
+# Ventana 3 – Cliente Next.js (frontend)
+########################################
+launch --title "Client" bash -lc "cd client && npm run dev"
+

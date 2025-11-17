@@ -1,0 +1,35 @@
+
+#===========================================#
+#   Ambrosia-POS Development Session 🌿     #
+#===========================================#
+
+########################################
+# TAB 1: Desarrollo principal
+########################################
+new_tab "Dev"
+layout tall
+
+# Ventana 1 – Servidor (Ktor)
+launch --title "Server" --cwd ~/code/Ambrosia-POS/server zsh --login -c "./gradlew run; exec zsh -l"
+
+# Ventana 2 – Cliente (Next.js)
+launch --title "Client" --cwd ~/code/Ambrosia-POS/client zsh -lc "npm run dev"
+
+
+########################################
+# TAB 2: Dev - Client
+########################################
+new_tab "Dev - Client"
+layout grid
+
+launch --title "Ambrosia Client" --cwd ~/code/Ambrosia-POS/client nvim .
+
+
+########################################
+# TAB 3: Dev - Server
+########################################
+new_tab "Dev - Server"
+layout grid
+
+launch --title "Ambrosia Server" --cwd ~/code/Ambrosia-POS/server nvim .
+
