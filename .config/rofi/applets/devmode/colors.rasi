@@ -1,0 +1,15 @@
+
+
+* {
+  background:        #1e1e2e;
+  background-alpha:  rgba(30, 30, 46, 0.65);
+  foreground:        #cdd6f4;
+  foreground-alt:    #a6adc8;
+  accent:            #89b4fa;
+  selected:          #89b4fa;
+  selected-text:     #1e1e2e;
+  border-color:      #45475a;
+  urgent:            #f38ba8;
+  active:            #a6e3a1;
+}
+

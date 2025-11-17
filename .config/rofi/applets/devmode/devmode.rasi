@@ -1,0 +1,109 @@
+
+/***
+ *    ┏┓┏┳┓┓┏┓ ┏┓  ┏┓
+ *    ┗┓ ┃ ┗┫┃ ┣ ━━┏┛
+ *    ┗┛ ┻ ┗┛┗┛┗┛  ┗━
+ *       DevMode Launcher
+ */
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "dmenu";
+    show-icons:                 true;
+    hover-select:               false;
+    scroll-method:              1;
+}
+
+/*****----- Imports -----*****/
+@import "~/.config/rofi/applets/devmode/colors.rasi"
+@import "~/.config/rofi/applets/devmode/fonts.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    height:                      35em;
+    width:                       56em;
+    transparency:                "real";
+    fullscreen:                  false;
+    border:                      3px;
+    border-color:                @border-color;
+    border-radius:               2em;
+    background-color:            @background-alpha;
+    background-image:            url("~/.config/rofi/applets/devmode/images/currentWalBlur.thumb", height);
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+    background-color:            transparent;
+}
+
+/*****----- Input Bar -----*****/
+inputbar {
+    padding:                     4em;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+    background-color:            transparent;
+}
+
+textbox-prompt-colon {
+    str:                         "💻 Dev Mode";
+    font:                        "JetBrainsMono Nerd Font Bold 16";
+    padding:                     1em;
+    text-color:                  @accent;
+    border-radius:               1.5em 0em 0em 1.5em;
+    background-color:            @background-alt;
+}
+
+entry {
+    border-radius:               0em 1.5em 1.5em 0em;
+    padding:                     1em;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    placeholder:                 "Selecciona entorno de desarrollo...";
+    placeholder-color:           @foreground-alt;
+}
+
+/*****----- List View -----*****/
+listbox {
+    padding:                     1.5em;
+    background-color:            @background-alpha;
+}
+
+listview {
+    spacing:                     0.8em;
+    scrollbar:                   false;
+    layout:                      vertical;
+    text-color:                  @foreground;
+}
+
+/*****----- Elements -----*****/
+element {
+    padding:                     1em 1.2em;
+    border-radius:               1em;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+    font:                        "JetBrainsMono Nerd Font 13";
+}
+
+element selected.normal {
+    background-color:            @accent;
+    text-color:                  @background;
+    border-radius:               1em;
+    border:                      2px;
+    border-color:                @accent;
+}
+
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+/*****----- Message / Errors -----*****/
+error-message {
+    text-color:                  @urgent;
+    background-color:            @background-alt;
+    border-radius:               1em;
+    padding:                     1em;
+}
+
